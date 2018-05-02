@@ -23,9 +23,11 @@ export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;33m\][\t]\w ($(git branch 2
 alias ls='ls -aF'
 alias ll='ls -la'
 alias l='ls -lartF'
+alias h='history'
 alias home='cd ~'
 alias test='cd ~/private/test'
-alias pythonn='cd ~/private/python/google-python-exercises'
+alias short='cd ~/Downloads/shorts'
+alias ms='~/Downloads/shorts/make_short'
 alias aliases='cat ~/.bashrc | grep alias'
 alias bashrc='vim ~/.bashrc; source ~/.bashrc' # source to apply changes
 alias hist='history 5'
@@ -33,36 +35,30 @@ alias swp='rm .*swp*'
 alias grepp='grep -inIr' # searches in file contents
 # Git (also git X in .gitconfig)
 alias gs='git status' 
+alias diff='clear; git diff'
 # tmux
 alias tmux='tmux at'
 # Django
 alias activate='source ~/ve/bin/activate' # searches in file contents
+activate
 # X
-export PYTHONPATH=/Users/fisher/src
-PATH=${PATH}:/usr/local/mongodb/bin
+export PYTHONPATH=$HOME/src/xometry_geometry:$HOME/src/xometry_app/python-path
+export PATH=${PATH}:/usr/local/mongodb/bin
 alias killmongo='ps -ef | grep mongod | tr -s " " " " | cut -d" " -f 3,4 | while read line; do if [[ `echo $line | cut -d " " -f2` -eq 1 ]]; then sudo kill -9 `echo $line | cut -d" " -f1`; fi; done'
 alias src='cd ~/src'
-alias webappd='cd ~/src/nextline_webapp'
-alias erpd='cd ~/src/nextline_erp'
-alias pricingd='cd ~/src/pricing'
-alias apid='cd ~/src/xometry_api'
-alias xzibitd='cd ~/src/xzibit'
-alias geod='cd ~/src/nextline_geod'
-alias engined='cd ~/src/nextline_engine'
-alias webapp='python ~/src/nextline_webapp/main.py'
-alias erp='python ~/src/nextline_erp/main.py'
-alias api='python ~/src/nextline_erp/main_api.py'
-alias refreshdb='activate; tar_file=$(aws s3 ls s3://qa.db.archive | tail -n 1 | tr -s " " " " | cut -d" " -f4); aws s3 cp s3://qa.db.archive/${tar_file} /tmp; tar -zxvf /tmp/${tar_file} -C /tmp; mongorestore --host localhost --port 27017 --drop --db xometry /tmp/xometry; rm -rf /tmp/xometry/ /tmp/${tar_file}; echo --- DB restored to ${tar_file} | cut -d"." -f1'
-
-# For MTM
-#alias note='vim ~/mtm/ex1/*'
-#alias gccf='gcc -std=c99 -Wall -pedantic-errors -Werror -DNDEBUG -g' # code.c -o out # debug
-#alias gccfm='gcc -std=c99 -Wall -pedantic-errors -Werror -DNDEBUG -g -lm' # code.c -o out #debug+math
-#alias check='~mtm/public/1415a/ex1/final_check hw1-sol.zip'
-#alias e='vim ~/mtm/ex4/*.cpp'
-# alias r='gcc -std=c99 -o mtm_raildb -g -Wall -pedantic-errors -Werror -lm *.c; ./mtm_raildb -i test.txt'
-#alias v='gcc -std=c99 -o mtm_raildb -g -Wall -pedantic-errors -Werror -lm *.c; valgrind --leak-check=full ./mtm_raildb -i test.txt'
-#alias g='gcc -std=c99 -o mtm_raildb -g -Wall -pedantic-errors -Werror *.c;'
+alias webappd='cd ~/src/xometry_webapp'
+alias appd='cd ~/src/xometry_app'
+alias erpd='cd ~/src/xometry_app/xometry_erp'
+alias pricingd='cd ~/src/xometry_app/pricing'
+alias apid='cd ~/src/xometry_app/xometry_api'
+alias frontend='cd ~/src/xometry_app/xometry_erp_frontend'
+alias geod='cd ~/src/xometry_app/xometry_geod'
+alias engined='cd ~/src/xometry_app/xometry_engine'
+alias webapp='python ~/src/xometry_app/xometry_webapp/main.py'
+alias erp='python -B ~/src/xometry_app/xometry_erp/main.py'
+alias api='python -B ~/src/xometry_app/xometry_erp/main_api.py'
+alias pyc='find ~/src/xometry_app -name "*.pyc" -exec rm -f {} \;'
+alias refreshdb='activate; tar_file=$(aws s3 ls s3://xometry-scrubbed-db-backups | sort | tail -n 1 | tr -s " " " " | cut -d" " -f4); aws s3 cp s3://xometry-scrubbed-db-backups/${tar_file} /tmp; tar -zxvf /tmp/${tar_file} -C /tmp; mongorestore --host amq-mongo.vm --port 27017 --drop --db xometry /tmp/xometry; rm -rf /tmp/xometry/ /tmp/${tar_file}; echo --- DB restored to ${tar_file} | cut -d"." -f1'
 
 # Fixes vim-airline inside tmux
 export TERM=screen-256color
