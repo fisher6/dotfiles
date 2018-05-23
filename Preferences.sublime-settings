@@ -1,0 +1,47 @@
+// Sublime settings file located at
+// $HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
+{
+    "draw_white_space": "all",
+    "file_exclude_patterns":
+    // excludes the files from search (and sidebar tree)
+    [
+        "*.pyc",
+        "*.bson",
+        "*.bz2",
+        "*.tar",
+        "*.gz",
+    ],
+    "folder_exclude_patterns":
+    // excludes the whole folder from search (and sidebar tree)
+    [
+        ".git*", // [".git", ".github"]
+        ".idea",
+        ".cache",
+        "node_modules",
+        "tests",
+    ],
+    "binary_file_patterns":
+    // excludes files ("*.jpg") and folders ("tests/*") from search
+    // but still shows them on the siderbar tab
+    // TODO: I don't think this actually works
+    [
+        "tests/*",
+    ],
+    "font_face": "Fira Code", // brew cask install font-fira-code
+    "font_size": 21,
+    "ignored_packages":
+    [
+        "JsPrettier",
+        "Vintage",
+    ],
+    "rulers":
+    [
+        80,
+        100,
+        120,
+    ],
+    "save_on_focus_lost": true,
+    "translate_tabs_to_spaces": true,
+    "word_wrap": true,
+    "wrap_width": 120,
+}
