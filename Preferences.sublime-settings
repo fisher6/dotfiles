@@ -20,13 +20,6 @@
         "node_modules",
         "tests",
     ],
-    "binary_file_patterns":
-    // excludes files ("*.jpg") and folders ("tests/*") from search
-    // but still shows them on the siderbar tab
-    // TODO: I don't think this actually works
-    [
-        "tests/*",
-    ],
     "font_face": "Fira Code", // brew cask install font-fira-code
     "font_size": 21,
     "ignored_packages":
