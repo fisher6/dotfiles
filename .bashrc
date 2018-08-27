@@ -58,7 +58,6 @@ alias webapp='python ~/src/xometry_app/xometry_webapp/main.py'
 alias erp='python -B ~/src/xometry_app/xometry_erp/main.py'
 alias api='python -B ~/src/xometry_app/xometry_erp/main_api.py'
 alias pyc='find ~/src/xometry_app -name "*.pyc" -exec rm -f {} \;'
-alias refreshdb='activate; tar_file=$(aws s3 ls s3://xometry-scrubbed-db-backups | sort | tail -n 1 | tr -s " " " " | cut -d" " -f4); aws s3 cp s3://xometry-scrubbed-db-backups/${tar_file} /tmp; tar -zxvf /tmp/${tar_file} -C /tmp; mongorestore --host amq-mongo.vm --port 27017 --drop --db xometry /tmp/xometry; rm -rf /tmp/xometry/ /tmp/${tar_file}; echo --- DB restored to ${tar_file} | cut -d"." -f1'
 
 # Fixes vim-airline inside tmux
 export TERM=screen-256color
