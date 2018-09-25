@@ -9,9 +9,6 @@
 	lg2 = log --oneline --pretty --decorate --graph
 	d = diff
 	ds = diff --staged
-	s = status
-	c = commit
-	a = add
 [core]
 	excludesfile = /Users/fisher/.gitignore_global
 [difftool "sourcetree"]
