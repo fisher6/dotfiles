@@ -34,6 +34,8 @@ alias hist='history 5'
 alias swp='rm .*swp*'
 alias grepp='grep -inIr' # searches in file contents
 # Git (also git X in .gitconfig)
+alias gc='git commit'
+alias ga='git add'
 alias gs='git status'
 alias gco='git checkout'
 alias gd='git diff'
