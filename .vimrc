@@ -28,6 +28,6 @@ noremap <Right> <NOP>
 set colorcolumn=81
 
 syntax on
-nmap ,c :%s///gn						" type ,c after searchign to see num of occourences
+nmap ,c :%s///gn " type ,c after searchign to see num of occourences
 
-set laststatus=2            " show the satus line all the time
+set laststatus=2 " show the status line all the time
