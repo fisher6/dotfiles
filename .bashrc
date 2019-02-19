@@ -19,6 +19,12 @@ export HISTTIMEFORMAT="%y/%m/%d %T  "
 export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;33m\][\t]\w ($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\$\[\e[m\] " # One color: ~/mtm
 #PS1="\[\e[0;36m\][\e[m\]\[\e[0;32m\]\t\[\e[0;36m\]]\e[m\]\[\e[0;36m\]\[\e[1;33m\]\w\[\e[m\]\[\e[1;30m\] \$\[\e[m\] " # Colors [17:20:16]~/mtm/ex1 $
 
+### Docker
+alias dc='docker-compose -f $APP/docker-compose-dev.yaml -f $APP/docker-compose-mongo.yml'
+alias dcps='dc ps | egrep "erp|p_api|mongo|erp_frontend"'
+alias erp='dc start erp; dc unpause erp'
+alias api='dc start api; dc unpause api'
+
 # Aliases
 alias ls='ls -aF'
 alias ll='ls -la'
