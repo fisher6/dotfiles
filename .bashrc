@@ -9,7 +9,7 @@ PATH="${PATH[*]}:.:" # PATH=$PATH:. also works
 
 #shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=50000
+export HISTSIZE=
 export HISTFILESIZE=$HISTSIZE
 export HISTTIMEFORMAT="%y/%m/%d %T  "
 
