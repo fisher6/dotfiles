@@ -48,6 +48,9 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gpush='git push'
 alias gpull='git pull'
+alias gpom='git pull origin master'
+alias gD='git branch | while read branch; do git branch -D $branch; done' # Deletes ALL branches
+alias gclean='git branch --merged master | grep -v "master" | xargs -n 1 git branch -d' # Cleans merged branches
 # tmux
 alias tmux='tmux at'
 # Django
