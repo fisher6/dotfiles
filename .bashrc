@@ -46,10 +46,15 @@ alias gs='git status'
 alias gco='git checkout'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gdstats='git diff --shortstat' # Git diff lines total added/removed (like it shows in PR in github)
+alias gdfiles='git diff --stat' # Git diff files lines count change
+alias gdfiless='git diff --numstat' # Git diff files lines count added/removed
+alias gdinline='git diff --word-diff' # Git diff with inline changes
+alias gdclean='git diff --color | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r' # Git diff without +- in the beginning of every row. Good for copy-pasting
 alias gpush='git push'
 alias gpull='git pull'
 alias gpom='git pull origin master'
-alias gD='git branch | while read branch; do git branch -D $branch; done' # Deletes ALL branches
+# alias gdel='git branch | while read branch; do git branch -D $branch; done' # Deletes ALL branches (comment cause dangerous af)
 alias gclean='git branch --merged master | grep -v "master" | xargs -n 1 git branch -d' # Cleans merged branches
 # tmux
 alias tmux='tmux at'
