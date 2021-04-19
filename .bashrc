@@ -25,6 +25,9 @@ alias dcps='dc ps | egrep "erp|p_api|mongo|erp_frontend"'
 alias erp='dc start erp; dc unpause erp'
 alias api='dc start api; dc unpause api'
 
+#VSCode
+alias vscode="open -a Visual\ Studio\ Code.app"
+
 # Aliases
 alias ls='ls -aF'
 alias ll='ls -la'
