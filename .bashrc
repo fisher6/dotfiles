@@ -54,6 +54,7 @@ alias gdlines='git diff --stat' # Git diff files lines count change
 alias gdlines2='git diff --numstat' # Git diff files lines count added/removed
 alias gdinline='git diff --word-diff' # Git diff with inline changes
 alias gdclean='git diff --color | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r' # Git diff without +- in the beginning of every row. Good for copy-pasting
+alias gloggrep='f(){ git log --grep="$@"; unset -f f; }; f'
 alias gpush='git push'
 alias gpull='git pull'
 alias gpom='git pull origin master'
