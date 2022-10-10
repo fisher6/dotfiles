@@ -56,7 +56,6 @@ alias gdinline='git diff --word-diff' # Git diff with inline changes
 alias gdclean='git diff --color | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r' # Git diff without +- in the beginning of every row. Good for copy-pasting
 alias gloggrep='f(){ git log --grep="$@"; unset -f f; }; f' # Search in previous commits messages
 alias glogsearch='f(){ git log -S"$@"; unset -f f; }; f' # Search in previous commits code diff
-alias gitlog
 alias gpush='git push'
 alias gpull='git pull'
 alias gpom='git pull origin master'
