@@ -49,6 +49,7 @@ alias gs='git status'
 alias gco='git checkout'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias ghash='git rev-parse HEAD'
 alias gdstats='git diff --shortstat' # Git diff lines total added/removed (like it shows in PR in github)
 alias gdlines='git diff --stat' # Git diff files lines count change
 alias gdlines2='git diff --numstat' # Git diff files lines count added/removed
