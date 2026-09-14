@@ -18,6 +18,7 @@ export HISTTIMEFORMAT="%y/%m/%d %T  "
 #PS1='${debian_chroot:+($debian_chroot)}[\t]\w\$ ' # No colors: ~/mtm
 export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;33m\][\t]\w ($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\$\[\e[m\] " # One color: ~/mtm
 #PS1="\[\e[0;36m\][\e[m\]\[\e[0;32m\]\t\[\e[0;36m\]]\e[m\]\[\e[0;36m\]\[\e[1;33m\]\w\[\e[m\]\[\e[1;30m\] \$\[\e[m\] " # Colors [17:20:16]~/mtm/ex1 $
+#PS1="\[\e[0;36m\][\e[m\]\[\e[0;36m\]\t\[\e[0;36m\]]\e[m\]\[\e[0;36m\]\[\e[1;33m\]\w\[\e[m\]\[\e[1;36m\]\$\[\e[m\] "  # Colors (2026 edition for Homebrew mac terminal)
 
 ### Docker
 alias dc='docker-compose -f $APP/docker-compose-dev.yaml -f $APP/docker-compose-mongo.yml'
